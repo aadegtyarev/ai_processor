@@ -1,0 +1,15 @@
+ai_processor (1.0.1) unstable; urgency=medium
+
+  * Fixed a bug in chunked token processing that caused incorrect embeddings to be generated for longer inputs.
+  * Improved the performance of chunked tokenization by reducing memory usage.
+  * Updated the documentation to reflect changes in chunked token handling.
+
+ -- Alexander Degtyarev <adegtyarev.ap@gmail.com>  Mon, 02 Dec 2024 18:35:00 +0400
+ 
+ai_processor (1.0.0) unstable; urgency=medium
+
+  * Initial release.
+  * Added support for chat processing and embedding generation.
+  * Implemented chunked token processing and logging.
+
+ -- Alexander Degtyarev <adegtyarev.ap@gmail.com>  Mon, 02 Dec 2024 18:19:02 +0000
