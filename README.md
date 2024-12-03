@@ -101,7 +101,7 @@ print(embeddings)
   "model_settings": {
     "model_name": "chat-gpt-like-model",
     "max_tokens": 1024,
-    "response_ratio": 1.2
+    "response_ratio": 0.3
   }
 }
 ```
