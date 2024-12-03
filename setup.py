@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="ai_processor",
-    version="1.0.1",
+    version="1.0.0",
     description="A library for processing text with neural networks using chunked prompts.",
     author="Alexander Degtyarev",
     author_email="adegtyarev.ap@gmail.com",
