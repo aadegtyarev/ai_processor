@@ -296,7 +296,15 @@ class ChatProcessor(BaseAIProcessor):
             self.logger.info(f"Processing chunk {index + 1}/{len(chunks)}")
 
             # Use initial or follow-up prompt
-            prompt = prompts["initial"] if index == 0 else prompts["follow_up_template"].format(last_chunk_end=last_chunk_end)
+            if index == 0:
+                prompt = prompts["initial"]
+            else:
+                follow_up_template = prompts["follow_up_template"]
+                # Check if the template contains the placeholder for formatting
+                if "{last_chunk_end}" in follow_up_template:
+                    prompt = follow_up_template.format(last_chunk_end=last_chunk_end)
+                else:
+                    prompt = follow_up_template
 
             # Calculate token counts
             prompt_tokens = self._count_tokens(prompt)
@@ -328,3 +336,4 @@ class ChatProcessor(BaseAIProcessor):
                 last_chunk_token_count = self._count_tokens(last_chunk_end)
 
         return {"status": "success", "chunks": results}
+
